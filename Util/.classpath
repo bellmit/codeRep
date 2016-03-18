@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="src/|src/com/duiba/test/|src/com/java/base/betterLogic/|src/com/java/base/buffer/|src/com/java/base/calendar/|src/com/java/base/dayuhao/|src/com/java/base/file/|src/com/java/base/filepath/|src/com/java/base/hashmap/|src/com/java/base/json/|src/com/java/base/networkInterface/|src/com/java/base/nio/|src/com/java/base/random/|src/com/java/base/reflect/|src/com/java/base/regex/|src/com/java/base/socket/|src/com/java/base/string/|src/com/java/base/thread/|src/com/java/base/TimerTask/|src/com/java/base/timestamp/|src/com/java/base/util/|src/com/java/base/util/concurrent/|src/com/java/base/waitNotify/|src/com/java/spring/mailsend/|src/com/tyyd/fkfb/|src/com/tyyd/serializable/|src/util/applet/calculator/|src/util/db/|src/util/hash/|src/util/MD5/|src/util/nullpointer/|src/util/OOMtest/|src/util/picToDB/|src/util/xlsx/|src/util/xuanhuan/|src/" kind="src" path=""/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/ezmorph-1.0.3.jar"/>
+	<classpathentry kind="lib" path="lib/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.1.41.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

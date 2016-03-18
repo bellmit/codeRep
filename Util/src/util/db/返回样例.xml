@@ -1,0 +1,24 @@
+<?xml version="1.0"?>	
+<CAPRoot>
+	<SessionHeader>
+		<TransactionID>01000201311120903508355</TransactionID>
+		<ActionCode>1</ActionCode>
+		<RspTime>20131112090350</RspTime>
+		<Response>
+			<RspType>0</RspType>
+			<RspCode>0000</RspCode>
+			<RspDesc>Success</RspDesc>
+		</Response>
+	</SessionHeader>
+	<SessionBody>
+		<AssertionQueryResp>
+			<AccountType>2000004</AccountType>
+			<AccountID>18041616731</AccountID>
+			<PWDType>03</PWDType>
+			<ProvinceID>08</ProvinceID>
+			<ReturnURL>http://www.189.cn/tymh/address_plus.do</ReturnURL>
+			<PWDAttrList/>
+			<TrustedAccList/>
+		</AssertionQueryResp>
+	</SessionBody>
+</CAPRoot>

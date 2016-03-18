@@ -1,0 +1,8 @@
+1.tddl理论  http://www.open-open.com/lib/view/open1393247567490.html
+2.tddl例子  http://rdc.taobao.com/team/jm/archives/1645
+3.tddl很好的例子 http://blog.sina.com.cn/s/blog_4adf62ab0100vpr1.html
+4.分库分表的方案 http://ywbrj042.iteye.com/blog/1923890
+5.应用程序层读写分离 http://jinnianshilongnian.iteye.com/blog/1720618
+6.tddl+diamond可用例子 http://yale.iteye.com/blog/1860019
+7.tddl+diamond重要例子 http://www.zhouyoudao.com/tddl-diamond-1/
+8.tddl中分库分表例子粗略介绍 http://gao-xianglong.iteye.com/blog/2019729

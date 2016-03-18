@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<CAPRoot>
+			<SessionHeader>
+				<ServiceCode>CAP42003</ServiceCode>
+				--固定CAP42003
+				<Version>CAP4200320120518</Version>
+				--固定CAP42003+年+月
+				<ActionCode>0</ActionCode>
+				+固定
+				<TransactionID>35999201311120903508355</TransactionID>
+				这个是：35999+8位日期+10位流水号（随机不重复数字）
+				<SrcSysID>35999</SrcSysID>
+				固定的：固定35999
+				<DstSysID>34888</DstSysID>
+				固定的：固定34888
+				<ReqTime>20131112090350</ReqTime>
+				请求时间年+月+日+时+分+秒
+				<DigitalSign/>
+			</SessionHeader>
+			<SessionBody>
+				<AssertionQueryReq>
+					<Ticket>3bce2e5a5791375102600421136c439b</Ticket>
+				</AssertionQueryReq>
+			</SessionBody>
+		</CAPRoot>

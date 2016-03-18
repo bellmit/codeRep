@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    updateCheck="false"
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" >
+
+    <!--  -->
+
+    <cacheManagerPeerProviderFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+        properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,multicastGroupPort=4446" />
+
+    <cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory" />
+
+    <!--
+         <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" 
+		/>
+    -->
+
+    <cache
+        name="ServerInfo"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" >
+<!-- 
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
+         -->
+    </cache>
+
+    <cache
+        name="UserStatus"
+        eternal="false"
+        maxElementsInMemory="100000"
+        
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" >
+<!-- 
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory" />
+             -->
+    </cache>
+    <!-- 任意时间过期 -->
+
+    <cache
+        name="RoomInfo"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="Pot"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="Robot"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="User"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="Activity"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    
+        <cache
+        name="OtherCache"
+        eternal="false"
+        maxElementsInMemory="100000"        
+        timeToLiveSeconds="300"
+        overflowToDisk="false" />
+    
+    <cache
+        name="TableNum"
+        eternal="false"
+        maxElementsInMemory="100000"
+        overflowToDisk="false"
+        timeToLiveSeconds="15" />
+
+    <cache
+        name="UserCache"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" >
+    </cache>
+
+    <cache
+        name="UserInfo"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="UserExt"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="Achieve"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="UserAchieve"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="QQUserList"
+        eternal="false"
+        maxElementsInMemory="100000"
+          timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="PokerFriend"
+        eternal="false"
+        maxElementsInMemory="100000"
+         timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="Notice"
+        eternal="false"
+        maxElementsInMemory="100000"
+        overflowToDisk="false"
+        timeToLiveSeconds="3600" />
+
+    <cache
+        name="Secret"
+        eternal="false"
+        maxElementsInMemory="100000"
+        timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="UserProperty"
+        eternal="false"
+        maxElementsInMemory="100000"
+        timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="Mail"
+        eternal="false"
+        maxElementsInMemory="100000" 
+        timeToLiveSeconds="172800"
+        overflowToDisk="false" />
+
+    <cache
+        name="Stock"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="UserBuffer"
+        eternal="false"
+         timeToLiveSeconds="172800"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="UserAvatar"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="Rank"
+        eternal="false"
+        maxElementsInMemory="100000"
+        overflowToDisk="false"
+        timeToLiveSeconds="600" />
+
+    <cache
+        name="HistoryRank"
+        eternal="false"
+        maxElementsInMemory="100000"
+        overflowToDisk="false"
+        timeToLiveSeconds="7200" />
+
+    <cache
+        name="systemCache"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="TableInfo"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+    <cache
+        name="Property"
+        eternal="true"
+        maxElementsInMemory="100000"
+        overflowToDisk="false" />
+
+</ehcache>

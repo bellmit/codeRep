@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:cache="http://www.springframework.org/schema/cache"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns="http://www.springframework.org/schema/beans"
+    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+            http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+            " >
+
+    <cache:annotation-driven cache-manager="ehcacheCacheManager" />
+
+    <!-- <aop:aspectj-autoproxy /> -->
+
+    <bean
+        id="methodCacheAspectJ"
+        class="org.freyja.cache.aspectj.FreyjaCacheAspectJ" >
+        <property name="cacheManager" >
+            <ref local="ehcacheCacheManager" />
+        </property>
+    </bean>
+    
+    <aop:config>
+        <aop:aspect ref="methodCacheAspectJ" >
+            <aop:around
+                method="around"
+                pointcut="execution(* com.guyu.data.dao.*.*(..))" />
+        </aop:aspect>
+    </aop:config>
+
+    <!--
+         <bean id="freyjaInterceptor" class="org.springframework.aop.support.DefaultPointcutAdvisor"> 
+		<property name="advice" ref="freyjaAdvice" /> <property name="pointcut" ref="freyjaPointcut" 
+		/> </bean> <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"> 
+		<property name="proxyTargetClass"> <value>true</value> </property> </bean> 
+		<bean name="freyjaPointcut" class="org.springframework.aop.support.annotation.AnnotationMatchingPointcut"> 
+		<constructor-arg index="0" value="null"> </constructor-arg> <constructor-arg 
+		index="1" value="org.freyja.cache.annotation.CacheDelete" /> </bean> <bean 
+		id="freyjaAdvice" class="org.freyja.cache.interceptor.FreyjaCacheInterceptor"> 
+		<property name="cacheManager" ref="ehcacheCacheManager"></property> </bean>
+    -->
+
+
+    <!--
+         <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager"> 
+		<property name="caches"> <set> <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"> 
+		<property name="name" value="systemCache" /> </bean> <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"> 
+		<property name="name" value="userCache" /> </bean> <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"> 
+		<property name="name" value="userMapCache" /> </bean> <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"> 
+		<property name="name" value="tableCache" /> </bean> <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"> 
+		<property name="name" value="rankCache" /> </bean> </set> </property> </bean>
+    -->
+
+    <bean
+        id="ehcacheCacheManager"
+        class="org.springframework.cache.ehcache.EhCacheCacheManager"
+        p:cacheManager-ref="ehcache" />
+
+    <bean
+        id="ehcache"
+        class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"
+        destroy-method="destroy"
+        p:config-location="file:config/cache/ehcache-method.xml" />
+
+</beans>
