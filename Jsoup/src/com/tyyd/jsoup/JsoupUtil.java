@@ -19,14 +19,21 @@ import org.jsoup.select.Elements;
 public class JsoupUtil {
 	public static void main(String[] args) {
 		try {
-			Document document = Jsoup.connect("http://top.hongxiu.com/yuepiaoy1.html").get();
-			Elements ul = document.select("div#lbox").select("ul");
-			for (Element element : ul) {
-				Elements li = element.select("li");
-				for (Element element2 : li) {
-					System.out.println(element2.text());
+			for(int i = 294800;i<295000;i++) {
+				String url = "http://www.kaola.com/product/" + i + ".html";
+				Document document = Jsoup.connect(url).get();
+				Elements ul = document.select("article.mainWrap").select("div.PInfoWrap.clearfix").
+						select("dl.PInfo.PInfo-standout").select("dt.product-title");
+				if(ul.text().length() > 0) {
+					System.out.println(i + ":" + new String(ul.text().getBytes(),"GBK").replace("?", " "));
 				}
 			}
+//			for (Element element : ul) {
+//				Elements li = element.select("li");
+//				for (Element element2 : li) {
+//					System.out.println(element2.text());
+//				}
+//			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
